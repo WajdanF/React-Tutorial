@@ -1,0 +1,1 @@
+run "npx create-react-app name_of_project" in the terminal to steup a react project
