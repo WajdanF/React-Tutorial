@@ -1,39 +1,29 @@
+import { useEffect, useState } from "react";
+import BlogList from "./bloglist";
+import useFetch from "./useFetch";
 
-import {useState} from 'react';
 const Home = () => {
-
-    const [blogs, setBlogs] = useState([
-        {
-            title: "My new website",
-            body: "lorem ipsum...",
-            author: "mario",
-            id: 1,
-        },
-        {
-            title: "Welcome party!",
-            body: "lorem ipsum...",
-            author: "yoshi",
-            id: 2,
-        },
-        {
-            title: "Web dev top tips",
-            body: "lorem ipsum...",
-            author: "mario",
-            id: 3,
-        },
-    ]);
+  const { error, isPending, data} = useFetch('http://localhost:8000/blogs')
+    
+    // const handleDelete = (id)=>{
+    //     const newBlogs = blogs.filter(blog => blog.id != id);
+    //     setBlogs(newBlogs);
+    // }
 
     return (
         <div className="home">
-            
-            {blogs.map((blog)=>(//here map has paratesis and not curly-brackets because we want to return a jsx template
-                <div className="blog-preview" key= {blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>Written by: {blog.author}</p>
-                </div>
-            ))}
+
+            {/* Error Message */}
+            {error && <div>{error}</div>}
+
+            {/* adding a loading using conditional statements*/}
+            {isPending && <div>Loading...</div>}
+
+            {/* This works because blogs is checked first and if it returns false (null) then it wont run */}
+            {/* But we have a usestate which re renders the window when the blogs is no loner null */}
+            {data && <BlogList blogs={data} />}
         </div>
     );
-}
- 
+};
+
 export default Home;

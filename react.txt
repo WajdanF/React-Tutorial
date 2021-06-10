@@ -41,3 +41,19 @@ Setting up states (useState Hook) -> its like a lisenter
 Ex:
 const [age,setAge]=useState(25) -> what goes inside the useState is the intial value and the setAge is going to be the new value
 calling it: setAge(50) in a function will set age to 50
+
+
+
+Props: Random name = {name of input you wanna pass} in the function call. EX:
+<blogs title = {title} /> -> title is now a prop and is passed through the function blogs (component)
+
+
+
+useEffect Hook runs everytime the data change or the page rerenders
+this also takes in a 2nd argument known as dependancies which is a list :
+useEffect(()={}, []) -> empty list will make sure this hook only runs at the inital start up
+if u want the hook to run everytime a certain variable change, then add that name inside Ex:
+[name] -> when name changes value it runs the useEffect hook
+
+
+When making fetch calls, wrap the res in an if statement: if{res.ok}{...} ->res.ok will check if the data we got back was good or not
