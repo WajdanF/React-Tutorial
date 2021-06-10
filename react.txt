@@ -1,1 +1,43 @@
 run "npx create-react-app name_of_project" in the terminal to steup a react project
+
+To run the project do "npm run start"
+
+For components use the keyword "className" instead of "class" in the js file (because of jsx)
+
+//VARIABLE CALLING IN JSX
+we can use variables in the jsx by putting it in "{}" when calling it
+These varaibles can have strings,numbers,lists etc.. but not objects or booleans
+They can also be use in attributes of the tag 
+
+
+A function is just a jsx template which is exported at the bottom of the file
+use 'sfc' to create a stateless functional component
+use import "component name" from "./path"
+To call this component in App.js do <Name of import> where you want to place it
+
+
+For styling (css) put everthing in index.css
+for styling inside tags (inline styling) do Ex: 
+<p style={{stuff in here but with camel case and no dashes, also the value for each css property is a string}}</p>
+
+
+
+For click events:
+Make a function outside the return describing what you want to happen if the button is pressed,
+then add "onClick = {function in here}"
+
+If the function needs an input do: "onClick = {()=>{ function in here (input) }}" - This is a function wrapper 
+
+For the event details (e), for the first time of onClick - it is passed through the function automatically, but it has to be defiend as an input
+Ex. 
+data= (e)=>{console.log(e)}, "onClick = data"
+
+For the second type Ex:
+data = (e,input)=>{console.log(e,input)}, "onClick={(e)=>{data(e, input)}}" -> the annon function gets the event details first
+
+
+
+Setting up states (useState Hook) -> its like a lisenter
+Ex:
+const [age,setAge]=useState(25) -> what goes inside the useState is the intial value and the setAge is going to be the new value
+calling it: setAge(50) in a function will set age to 50
