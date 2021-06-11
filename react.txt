@@ -72,3 +72,11 @@ then put the all routes in a switch:
 Next is to go the link location (for example navbar.js), then import this: import {Link } from 'react-router-dom'
 Next is to replace the <a></a> tags with the href with <Link></Link> and replace "href" to "to"
 
+
+Aborting a fetch: make this: const  abort = new AbortController();
+pass {signal:abort.signal} as the second argument in the fetch 
+make a return statement for the function/hook and then call abort.abort() in the return function
+Then the catch method will catch the error that the fetch gives out after aborting
+
+Also make a check if the error was a abort or not like:
+If (err.name === "AbortError"){console.log('something')}
