@@ -62,3 +62,13 @@ When making fetch calls, wrap the res in an if statement: if{res.ok}{...} ->res.
 
 ROUTING:
 use "npm install react-router-dom" to install the library
+Then import this: import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+Next is to put the <Router></Router>
+then put the all routes in a switch:
+<Switch>
+<Route path = "/page"> <page /></Routes>
+</Switch>
+
+Next is to go the link location (for example navbar.js), then import this: import {Link } from 'react-router-dom'
+Next is to replace the <a></a> tags with the href with <Link></Link> and replace "href" to "to"
+
