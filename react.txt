@@ -1,3 +1,6 @@
+npx json-server --watch data/db.json --port 8000
+
+
 run "npx create-react-app name_of_project" in the terminal to steup a react project
 
 To run the project do "npm run start"
@@ -80,3 +83,11 @@ Then the catch method will catch the error that the fetch gives out after aborti
 
 Also make a check if the error was a abort or not like:
 If (err.name === "AbortError"){console.log('something')}
+
+
+
+Route Parameters:
+put the path in the route to seomthing like: "/blogs/:id" and then call:  const {id }= useParams();
+where you want to use the id 
+
+
