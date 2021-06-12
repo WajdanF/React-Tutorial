@@ -3,6 +3,7 @@ import Home from './home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Create from './create';
 import BlogDetails from './blogdetails';
+import NotFound from './notfound'
 function App() {
 
 
@@ -24,6 +25,10 @@ function App() {
                       <Route path="/blogs/:id">
                           <BlogDetails />
                           
+                      </Route>
+
+                      <Route path ="*"> {/*Catches all other route if its not present*/ }  
+                          <NotFound />
                       </Route>
                   </Switch>
               </div>
