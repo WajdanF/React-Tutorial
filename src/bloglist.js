@@ -9,10 +9,9 @@ const BlogList = (props) => {
                     blog //here map has paratesis and not curly-brackets because we want to return a jsx template
                 ) => (
                     <div className="blog-preview" key={blog.id}>
-                        <h2>{blog.title}</h2>
                         <Link to={`/blogs/${blog.id}`}>
+                            <h2>{blog.title}</h2>
                             <p>Written by: {blog.author}</p>
-                            <button>Delete Blog</button>
                         </Link>
                     </div>
                 )
